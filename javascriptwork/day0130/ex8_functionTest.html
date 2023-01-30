@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("안녕하세요 재은님~ 자바스크립트 수업에 온걸 환영해요<br>");
+        document.write("안녕하세요 한경님~ 자바스크립트 수업에 온걸 환영해요<br>");
+        document.write("안녕하세요 희수님~ 자바스크립트 수업에 온걸 환영해요<br>");
+
+
+        function showName(name){
+            document.write("안녕하세요"+name+"님~ 자바스크립트 수업에 온걸 환영해요<br>");
+        }
+
+        showName('재은');
+        showName('희수');
+        showName('한경');
+
+        //showInfo라는 함수를 만들고 이름과 나이를 파라메타로 넘겨서 
+        //2명을 호출출력해보세요.
+
+        function showInfo(name,age){
+            document.write("이름: "+name +" 나이: "+age+"<br>");
+        }
+
+        showInfo('지성웅',26);
+        showInfo('김성웅',23);
+
+        //나이,키,이름을 파라메타로 받아 출력
+        //리터럴
+        var myInfo=function(age,height,name){
+            document.write("나이: "+age+"세<br>");
+            document.write("신장: "+height+"cm<br>");
+            document.write("이름ㄴ: "+name+"<br>");
+
+        }
+
+        myInfo(26,179,'지성웅');
+    </script>
+</body>
+</html>
