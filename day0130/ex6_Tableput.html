@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 2px solid gray;
+            width: 500px;
+        }
+
+        tr,
+        th,
+        td {
+            border: 1px dotted gray;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+    <caption>Radi&Check&Select</caption>
+    <tr>
+        <td>
+            <b>
+                최종학력을 선택하시오
+            </b>
+            <!-- radioBox에서는 name이 동일해야한다-->
+            <input type="radio" name="grade" value="고등학교" checked="checked">고등학교 &nbsp;
+            <input type="radio" name="grade" value="전문대학">전문대학 &nbsp;
+            <input type="radio" name="grade" value="대학교">대학교 &nbsp;
+            <input type="radio" name="grade" value="대학원">대학원 &nbsp;
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <b>본인이 가능한 프로그램 언어</b>
+            <!-- checkBox에서는 name이 동일해야한다.. 중복가능-->
+            <input type="checkbox" name="lang" value="c언어"> &nbsp;
+            <input type="checkbox" name="lang" value="java">java &nbsp;
+            <input type="checkbox" name="lang" value="kotlin">kotlin &nbsp;
+            <input type="checkbox" name="lang" value="c#">C# &nbsp;
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>이미지선택</b>
+            <input type="file">
+        </td>
+    </tr>
+
+    <tr>
+    <td>
+        <b>우리반에서 가장 좋은 사람 선택</b>
+        <select >
+            <option value="주희">주희</option>
+            <option value="도희">도희</option>
+            <option value="환라">환라ㅣ</option>
+            <option value="희수">희수</option>
+            <option value="하랑">하랑</option>
+            <option value="우형">우형</option>
+
+        </select>
+    </td>
+    </tr>
+    <tr>
+        <td>
+        <b>당신의 키는 몇 cm입니까?</b>
+        <input type="number" name="height" min="150" max="220" step="10" value="150">cm
+    </td>
+    </tr>
+    <tr>
+        <td>
+        <b>당신의 몸무게는는 몇 kg입니까?</b>
+        <input type="number" name="height" min="50" max="150" step="10" value="50">kg
+    </td>
+    </tr>
+
+    <tr>
+        <td>
+        <b>색상선택</b>
+        <input type="color">
+    </td>
+    </tr>
+        <td>
+            <b>
+                <input type="date" value="2022-12-25">
+            </b>
+        </td>
+    </table>
+</body>
+
+</html>
