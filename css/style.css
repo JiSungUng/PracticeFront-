@@ -1,0 +1,27 @@
+body * {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn {
+    width: 120px;
+    height: 35px;
+    font-size: 15px;    
+    border-radius: 109=px;
+
+}
+
+.btn-green {
+    background-color: green;
+    color: white;
+}
+
+.btn-pink {
+    background-color: pink;
+    color: brown;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+

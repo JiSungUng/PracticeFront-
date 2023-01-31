@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 외부 css 파일 가져오기/// -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        function hello(){
+            var ans = confirm("정말 삭제하시겠습니까?");
+    
+        if(ans ==1)
+        alert("데이터를 삭제했습니다.")
+        else
+        alert("삭제작업을 취소했어요")
+
+        }
+
+        window.onload =function(){
+           var a =document.getElementById("btn3");
+        a.onclick = function(){
+            var name = prompt("당신의 이름은?");
+            alert("내 이름은 "+name+" 입니다.");
+        }
+        
+        }
+        
+    </script>
+</head>
+<body>
+    <button type="button" class="btn btn-green" onclick="alert('안녕?')">alert</button>
+    <input type="button" value="confirm" class="btn btn-pink" onclick="hello()">
+    <button type="button" class="btn btn-black" id="btn3">prompt</button>
+
+</body>
+</html>
