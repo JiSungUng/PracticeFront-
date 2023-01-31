@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Q.h1태그로 배열문자열을 해당색으로 출력해 보세요</h2>
+    <script>
+        var colors=['red','blue','green','pink','gray','tomato'];
+
+        for(var i=0;i<colors.length;i++){
+            document.write("<h1 style=color:"+ colors[i]+";>"+"안녕하세요"+"</h1>")
+        }
+    </script>
+    <hr>
+    <h2>배열선언 후 요소 추가</h2>
+    <script>
+        var flowers =new Array();
+
+        flowers.push("장미꽃");
+        console.log(flowers);
+        flowers.push("후리지아");
+        flowers.push("수국");
+        flowers.push("안개");
+
+        for(var i=0; i<flowers.length;i++){
+            document.write("<h1>"+flowers[i]+"</h1>");
+        }
+
+        flowers.pop();//마지막 배열값 제고
+        flowers.pop();
+
+        document.write("<br><br>");
+        for(var i=0; i<flowers.length;i++){
+            document.write("<h3>"+flowers[i]+"</h3>");
+        }
+    </script>
+</body>
+</html>
