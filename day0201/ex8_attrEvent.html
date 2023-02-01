@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        img{
+            width: 150px;
+            height: 100px;
+            border: dotted purple;
+        }
+    </style>
+    
+    <script>
+        window.onload= function(){
+            var img1=document.getElementById("myimg1");
+            var img2=document.getElementById("myimg2");
+            
+            var first=document.getElementById("btn1");
+            var second=document.getElementById("btn2");
+            var reset=document.getElementById("btn3");
+
+            first.onclick = function(){
+                img1.setAttribute("src","../logoImg/icon03.png");
+                img2.setAttribute("src","../logoImg/icon02.png");
+
+                //1번 이미지 너비변경
+                myimg1.style.width="300px";
+                
+            }
+            second.onclick = function(){
+                img1.setAttribute("src","../logoImg/icon04.png");
+                img2.setAttribute("src","../logoImg/icon05.png");
+
+            }
+            reset.onclick = function(){
+                img1.setAttribute("src","../logoImg/icon02.png");
+                img2.setAttribute("src","../logoImg/blackwidow.png");
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h4>절대경로 이미지변경</h4>
+    <img src="../logoImg/icon02.png" id="myimg1" >
+    <h4>상대경로 이미지변경</h4>
+    <img src="../logoImg/blackwidow.png" id="myimg2">
+
+    <input type="button" value="변경1" id="btn1" class="btn btn-pink" >
+    <input type="button" value="변경2" id="btn2" class="btn btn-black">
+    <input type="button" value="원래대로" id="btn3" class="btn btn-green">
+</body>
+</html>

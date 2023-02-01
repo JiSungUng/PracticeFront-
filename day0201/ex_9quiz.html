@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+   
+    <style>
+        #out1{
+            position: absolute;
+            left: 20px;
+            top:30px;
+            padding: 10 10 10 10;
+            width: 200px;
+            height: 100px;
+            
+        }
+        #out2{
+            position: absolute;
+            left: 40px;
+            top:30px;
+            padding: 10 10 10 10;
+            width: 200px;
+            height: 100px;
+            
+        }
+        #out3{
+            position: absolute;
+            left: 100px;
+            top:30px;
+            padding: 10 10 10 10;
+            width: 200px;
+            height: 100px;
+            
+        }
+    </style>
+    <script>
+        function comic(){
+            var a=confirm('이미지를 볼까요??');
+            if(a==1)
+                comicc.src = "../만화이미지/17.png";
+                else
+                out.innerHTML="취소했어요";
+        }
+        function star(){
+            var a=confirm('이미지를 볼까요??');
+            if(a==1)
+                starr.src = "../연예인사진/1.jpg";
+                else
+                out.innerHTML="취소했어요";
+        }
+        function food(){
+            var a=confirm('이미지를 볼까요??');
+            if(a==1)
+                foodd.src = "../html_img/1.png";
+                else
+                out.innerHTML="취소했어요";
+        }
+    </script>
+</head>
+<body>
+    
+   
+    
+    <input type="button" value="만화" class="btn btn-pink" onclick="comic()">
+    <input type="button" value="연예인" class="btn btn-green" onclick="star()">
+    <input type="button" value="음식" class="btn btn-black" onclick="food()">
+
+    <div style="position: absolute; top:80px; left: 10px;">
+        <img src=" " name="comicc" id="out1">
+    </div>
+    <div style="position: absolute; top:80px; left: 180px;">
+        <img src=" " name="starr" id =out2 >
+    </div>
+    <div style="position: absolute; top:80px; left: 330px;">
+        <img src=" " name="foodd" id="out3">
+    </div>
+
+    
+    </div>
+</body>
+</html>
