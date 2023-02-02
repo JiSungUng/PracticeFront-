@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #out{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight:    bold;
+            padding: 20px 20px;
+            width: 500px;
+            margin-top: 50px;
+            border: 0px solid black;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+
+            var fsize=document.getElementById("fsize");
+            var out=document.getElementById("out");
+
+            fsize.innerHTML="현재 글꼴크기는 40px 입니다."
+
+            //버튼1
+            document.getElementById("btn1").onclick=function(){
+
+                var outsize=parseInt(out.style.fontSize);//40px이므로 숫자로형변환
+                //alert(outsize);
+                outsize-=3;
+
+                if(outsize<8){
+                    alert("더이상 줄일 수 없습니다.")
+                    outsize+=3;
+                    return;//메서드 종료
+                }
+                out.style.fontSize=outsize+"px";
+                fsize.innerHTML="현재 글꼴 크기는 "+ outsize+"px입니다.";
+            }
+            //버튼2(60보다크면 더이상 늘릴 수 없습니다.)
+            document.getElementById("btn2").onclick=function(){
+
+                var outsize=parseInt(out.style.fontSize);
+                outsize+=3;
+
+                if(outsize>60){
+                    alert("더 이상 늘릴 수 없습니다.")
+                    outsize-=3;
+                    return; 
+                }
+                out.style.fontSize=outsize+"px";
+                fsize.innerHTML="현재 글꼴 크기는 "+ outsize+"px입니다.";
+            }
+            //글자색 이벤트
+            document.getElementById("mycolor").onchange=function(){
+                //alert();
+                out.style.color=this.value;
+            }
+            document.getElementById("mybgcolor").onchange=function(){
+                //alert();
+                out.style.backgroundColor=this.value;
+            }
+        //테두리
+        document.getElementById("selwidth").onchange=function(){
+            out.style.borderWidth=this.value+"px";
+        }
+
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id="btn1">점점작게</button>
+    <button type="button" id="btn2">점점크게</button>
+    <hr>
+    <div id="fsize"></div>
+    <b>글자색선택</b>
+    <input type="color" value="#ff00ff" id="mycolor">
+    <br>
+    <b>배경색선택</b>
+    <input type="color" value="#ccccff" id="mybgcolor">
+    <br>
+    <b>테두리선 굵기 선택</b>
+    <select id="selwidth" style="width: 120px;">
+        <option value="0">없음</option>
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="10">10</option>
+    </select>
+
+    <div id="out" style="font-size: 40px;">
+        오늘은 즐거운 목요일 입니다.
+    </div>
+</body>
+</html>

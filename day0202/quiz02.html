@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.onload=function(){
+        var img1 = document.getElementById("img1");
+
+        var init_image="../html_img/1.png";
+        img1.setAttribute("src",init_image);
+        img1.onmouseover=function(){
+            img1.setAttribute("src","../html_img/2.png");
+        }
+        img1.onclick =function(){
+            img1.setAttribute("src","../html_img/3.png");
+        }
+        img1.onmouseleave=function(){
+            img1.setAttribute("src","../html_img/1.png");
+        }
+
+        
+           
+    
+        
+    }
+</script>
+<body>
+    <!-- 음식사진(1)을 img태그로 나타낸 후 id를 img1으로 주고
+    그아이디로 이벤트 추가하기
+사진에 마우스를 올리면 음식사진 2로 바뀌고 클릭하면 음식사진 3으로 바뀌고
+마우스를 벗어나면 다시 원래 이미지 1로 변겨 -->
+
+
+<div>
+    <img src="../html_img/1.png" id="img1">
+</div>
+</body>
+</html>

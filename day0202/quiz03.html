@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #infor{
+        width: 300px;
+        height: 300px;
+        border: 10px solid gray;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var img=document.getElementById("img");
+        var infor=document.getElementById("infor");
+        img.onclick=function(){
+
+            infor.innerHTML="정보.. 어케가져오는지 모르겠다..";
+        }
+    }
+</script>
+<body>
+    <!-- img로 width=200 height=180으로 아무사진이나 body에 넣은후
+    이미지를 클릭하면 아래 div태그안에 각종정보(src,width,height)
+    를 얻어서 출력하시오(getAttribute,innerHTML 사용)
+ -->
+
+
+ <div>
+
+     <img src="../만화이미지/01.png" width="200" height="180" id="img">
+    </div>
+ <br>
+
+ <div id="infor">
+
+ </div>
+</body>
+</html>
