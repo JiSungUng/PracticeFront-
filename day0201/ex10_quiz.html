@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+<style>
+    div img{
+        max-width: 150px;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var r=document.getElementById("result");
+        var ani=document.getElementById("ani");
+        var person= document.getElementById("person");
+        var food= document.getElementById("food");
+
+
+        ani.onclick = function(){
+            var a= confirm("만화 이미지 추가할까요?");
+            if(a){
+                r.innerHTML+="<img src='../만화이미지/01.png'>";
+            }
+        }
+
+        person.onclick = function(){
+            var a= confirm("만화 이미지 추가할까요?");
+            if(a){
+                r.innerHTML+="<img src='../만화이미지/01.png'>";
+            }
+        }
+
+        food.onclick = function(){
+            var a= confirm("만화 이미지 추가할까요?");
+            if(a){
+                r.innerHTML+="<img src='../만화이미지/01.png'>";
+            }
+        }
+
+    }
+</script>
+
+</head>
+<body>
+    
+    <button type="button" value="만화" class="btn btn-pink" id="ani">만화</button>
+    <button type="button" value="연예인" class="btn btn-green" id="person">사람</button>
+    <button type="button" value="음식" class="btn btn-black" id="food">음식</button>
+
+<div id="result"></div>
+</body>
+</html>
