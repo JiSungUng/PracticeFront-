@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div img{max-width:150px}
+
+    </style>
+<script>
+    window.onload=function(){
+    var imgarr=new Arr();
+        imgarr[0]="../만화이미지/15.png";    
+        imgarr[1]="../flower_ani/f3.png";    
+        imgarr[2]="../만화이미지/03.png";    
+        imgarr[3]="../flower_ani/f5.png";   
+        imgarr[4]="../만화이미지/05.png" ;
+
+        var r=document.getElementsByID("result");
+        var btn1=document.getElementById("btn1");
+
+        btn1.onclick=function(){
+
+            var idx=prompt("출력할 이미지의 인덱스 번호를 입력해주세요",0);
+        
+            if(idx<0 || idx>4){
+                r.innerHTML ="해당번호의 이미지는 없습니다."
+            }else{
+                r.innerHTML="<img src='"+imgarr[idx]+"'>";
+            }
+        }
+    }
+</script>
+
+</head>
+
+<body>
+    <button type="=button" id="btn1">이미지출력</button>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

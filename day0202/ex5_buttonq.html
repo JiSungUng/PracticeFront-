@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    window.onload=function(){
+
+        var person1 = document.getElementById("person1");
+        var person2 = document.getElementById("person2");
+        var person3 = document.getElementById("person3");
+        var photo = document.getElementById("photo");
+
+        var init_image=" ";
+        photo.setAttribute("src",init_image);
+       
+    
+        person1.onclick =function(){
+            photo.setAttribute("src",this.value)
+        }
+        person2.onclick =function(){
+            photo.setAttribute("src",this.value)
+        }
+        person3.onclick =function(){
+            photo.setAttribute("src",this.value)
+        }
+
+
+
+
+
+
+
+        //점점작게
+        document.getElementById("btnSmall").onclick=function(){
+            var w=photo.getAttribute("width");
+            w-=10;
+            photo.setAttribute("width",w)
+        }
+
+        //점점크게
+        document.getElementById("btnLarge").onclick=function(){
+            var w=parseInt(photo.getAttribute("width"));
+            w+=10;
+            photo.setAttribute("width",w);
+        }
+        
+
+    
+    }
+    
+</script>
+
+
+
+<body>
+
+
+
+    <div  class="person">
+        <button type="button" value = '../연예인사진/7.jpg' class="btn btn-pink" id="person1" >연예인1</button>
+        <button type="button" value= '../연예인사진/9.jpg' class="btn btn-black" id="person2">연예인2</button>
+        <button type="button" value= '../연예인사진/8.jpg' class="btn btn-black" id="person3">연예인3</button>
+    </div>
+    <hr>
+    <div  class="buttons">
+        <button type="button" class="btn btn-pink" id="btnSmall" >점점작게</button>
+        <button type="button" class="btn btn-black" id="btnLarge">점점크게</button>
+    </div>
+    <hr>
+    <div>
+        <img src=""  id="photo" width="350">
+
+    </div>
+</body>
+</html>

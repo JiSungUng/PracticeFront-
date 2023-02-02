@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+        window.onload=function(){
+            var selImage=document.getElementById("selImage");
+            var photo = document.getElementById("photo")
+            //초기이미지
+            //select태그에서 선택된 option의 value값 얻기
+            var init_image=selImage.value;
+            //alert(init_image);
+            //현재의 사진속성을 변경해준다
+            photo.setAttribute("src",init_image);
+
+            //select이벤트_change
+            selImage.onchange=function(){
+
+                //모든 이벤트함수에는 이벤트 발생한 객체에 대한 this라는 
+                //변수가 기본적으로 존재함.
+
+                //사진(photo)의 src에 this.value적용
+                photo.setAttribute("src",this.value);
+            }
+            
+            //점점작게
+            document.getElementById("btnSmall").onclick=function(){
+                var w=photo.getAttribute("width");
+                w-=10;
+                photo.setAttribute("width",w)
+            }
+
+            //점점크게
+            document.getElementById("btnLarge").onclick=function(){
+                var w=parseInt(photo.getAttribute("width"));
+                w+=10;
+                photo.setAttribute("width",w);
+            }
+            
+
+        
+        }
+    </script>
+
+    
+</head>
+<body>
+    <div  class="buttons">
+        <button type="button" class="btn btn-pink" id="btnSmall" >점점작게</button>
+        <button type="button" class="btn btn-black" id="btnLarge">점점크게</button>
+        <b>사진선택</b>
+        <select id="selImage">
+            <option value="../연예인사진/10.jpg">김태희</option>
+            <option value="../연예인사진/19.jpg">수지</option>
+            <option value="../연예인사진/20.jpg">유아인</option>
+            <option value="../연예인사진/17.jpg" selected>신민아</option>
+        </select>
+    </div>
+    <div >
+        <img src="../연예인사진/9.jpg" id="photo" width="350">
+    </div>
+</body>
+</html>
