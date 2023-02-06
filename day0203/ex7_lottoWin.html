@@ -41,8 +41,42 @@
             document.getElementById("btnFresh").onclick=function(){
                 writeLotto();
             }
-        }
+            document.getElementById("btnSelect").onclick=function(){
 
+        }
+    }
+            document.getElementById("btnSelect").onclick=function(){
+                var score = 0;
+
+                //정답과 비교해서 점수 계산
+                for(var i=0;i<mylotto.length;i++){
+                for(var j=0;j<lotto.length;j++){
+                    if(mylotto[i]==lotto[j]){
+                        score++;
+                    }
+                }
+            
+            var s="<b> 이번주 로또 정답</b><br>";
+
+            for(var i =0;i<lotto.length;i++){
+                s+="["+lotto[i]+"]&nbsp;&nbsp;";
+            }
+            s+="<br>맞은개수: "+score+"개";
+            s+="<h3 style ='color:red;'>";
+                if(score==6){
+                    s+="1등!";
+                }else if(score==5){
+                    s+="2등";
+                }else if(score==3){
+                    s+="등";
+                }else {
+                    s+="꽝";
+                }s+="</h3>";
+                document.getElementById("view").innerHTML=s;
+        }
+    }
+    
+    
         //사용자함수
         function writeLotto(){
             //1~45개의 중복되지 않는 숫자를 mylotto에 구한다.
@@ -58,7 +92,7 @@
                 }
             }
             var lottodiv=document.getElementsByClassName("lotto");
-
+            
             for(var i=0;i<lottodiv.length;i++){
                 lottodiv[i].innerHTML=mylotto[i];
             }
