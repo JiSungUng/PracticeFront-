@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jque$ry.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <script>
+        //window.onload에 해당_#1  -> 사용거의 안함
+        $(document).ready(function(){
+          //  alert("처음 로딩시 호출")
+        });
+
+        //window.onload에 해당_#2
+        $(function(){
+
+            //alert("제이쿼리 시작합니다.")
+            //css함수: style변경
+            //css(속성): 해당요소의 속성에 대한 값 반환
+            //css(속성,값): 속성을 해당 값으로 변경
+            //$(selector): $안에 접근을 위한 요소값을 selector라고 한다.
+
+            //모든 b태그의 글꼴크기를 18pt로 변경하라
+            $("b").css("font-size","28pt");
+
+            //b태그 중에서 클래스 명이 happy인 태그의 배경색을 orange로 변경
+            $("b.happy").css("background-color","orange");
+
+            //모든 h2태그의 보더를 변경하고 글자색을 빨강색으로 변경
+
+            //방법1_연달아 css함수준다.
+            $("h2").css("border","3px solid pink").css("color","red");
+            
+            //방법2
+            $("h2").css({
+                "border":"5px double blue",
+                "color":"gray"
+            });
+
+            //모든 이미지 속성인 src를 변경하라
+            //스타일 변경은 css,속성변경은 attr
+            //style의 width값도 수정
+            $("img").attr("src","../만화이미지/02.png");
+            $("img").css("width","100px");
+            //$("img").attr("width","300px");
+
+            //위의 코드 한줄로 줄이기
+            $("img").attr("src","../만화이미지/03.png").css("width","200px");
+
+            //스타일 여러개 변경할 경우
+            $("img").attr("src","../만화이미지/01.png").css({
+                "width":"150px",
+                "border":"2px dotted magenta" 
+            
+            });
+            //Q1. class가 yourimg인 img의 이미지의 src를 변경하고
+            //width,border, border-radius,box-shadow도 변경해보세요
+            $("img.yourimg").attr("src","../만화이미지/04.png").css({
+                "width":"150px",
+                "border":"3px solid gray",
+                "border-radius":"40px",
+                "box-shadow":"5px 5px 5px gray"
+            });
+
+            //Q2. span태그중에서 클래스명이 nice인 태그의 배경색과 글자색 글자크기를 변경하시오.
+
+            $("span.nice").css({
+                "background-color":"pink",
+                "color":"brouwn",
+                "font-size":"1.5em"
+            });
+            //Q03. 아이디가 myimg의 이미지와 너비를 변경하고 title을 안녕하세요로 변경하세요
+            $("#myimg").css("width","100px").attr({
+                "src":"../연예인사진/5.jpg",
+                "title":"안녕하세요"
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <h2>JQuery에서 제일 많이 사용하는 함수 css,attr</h2>
+    <b class = "happy">B Tag Class happy</b>
+    <br>
+    <span class="nice">Span Tag Class Nice</span>
+    <h2 class="happy">H2 Tag Class Happy</h2>
+    <b class = "nice">B Tag Class Nice</b>
+
+    <b>나의 최애 이미지들</b>
+    <img src="" >
+    <img src="" class="yourimg">
+    <img src="" >
+    <img src="" id="myimg" title="">
+
+</body>
+</html>
