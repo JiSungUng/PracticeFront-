@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h3 class="alert alert-danger">10개 이상의 이미지 태그에 each문으로 작은 사진을 넣고 작은 사진에 마우스를 올리면 큰 이미지가 나오게</h3>
+    <h3 class="alert alert-success">1. small large css 알아서 줄것
+        2.style에 클래스 하나 넣고 작은이미지에 마우스 오버와 아웃 했을 때 효과
+        3. small이미지는 쇼핑몰이나 연예인사진을 each함수 이용해서 넣을것
+    </h3>
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+
+    <br><br>
+    <img src="" class="large">
+    
+
+    <script>
+        $("img.small").css({
+            "width":"100px",
+            "height":"100px",
+            "border" : "2px solid gray"
+        })
+        
+        $("img.large").css({
+            "width":"400px",
+            "height":"400px"
+        })
+
+
+        var a=$("img.small").each(function(idx){
+            $(this).attr("src","../쇼핑몰사진/"+(idx+1)+".jpg");
+        })
+
+        $("img.small").mouseover(function(){
+            imgname=$(this).attr("src");
+            $("img.large").attr("src","../만화이미지/08.png");
+        })
+
+        $("img.small").mouseout(function(){
+            $("img.large").attr("src",imgname);
+        })
+
+    </script>
+</body>
+</html>

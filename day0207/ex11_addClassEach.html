@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 25px;
+            margin-bottom: 10px;
+
+        }
+
+        .hello_0{
+            border: 10px groove orange;
+            background-color: aquamarine;
+            color: blue;
+        }
+
+        .hello_1{
+            border: 10px groove pink;
+            background-color: yellowgreen;
+            color: white;
+        }
+
+        .hello_2{
+            border: 10px groove green;
+            background-color: red;
+            color: black;
+        }
+
+        .hello_3{
+        border: 10px groove black;
+            background-color: blue;
+            color: yellow;
+        }
+        .hello_4{
+        border: 10px groove red;
+            background-color: green;
+            color: blue;
+        }
+        
+        </style>
+        <script>
+            //스타일 적용버튼을 누르면 div에 addClass index별로 적용
+            //제거 버튼 누르면 removeClass해주기
+            $(function(){
+            $("button.btn1").click(function(){
+                $("div").each(function(idx){
+                    $(this).addClass("hello_"+idx);
+                })
+            })
+            $("button.btn2").click(function(){
+                $("div").removeClass();
+                
+            })
+
+           
+                
+            });
+        </script>
+</head>
+<body>
+    <button type="button" class="btn1 btn-info" style="width:150px">스타일 적용</button>
+    <button type="button" class="btn2 btn-danger" style="width:150px">스타일 제거</button>
+
+    <div>안녕하세요</div>
+    <div>제이쿼리 재밌죠?</div>
+    <div>오늘은 addClass 배우는 날</div>
+    <div>쌍용교육 701호</div>
+    <div>each 함수도 배우고 있어요</div>
+</body>
+</html>

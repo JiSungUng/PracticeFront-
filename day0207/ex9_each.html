@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        .bg_0{background-color: orange;color: blue;width: 200px;}
+        .bg_1{background-color: black;color: white; width: 200px;}
+        .bg_2{background-color: yellow;color: cyan; width: 200px;}
+        .bg_3{background-color: green;color: brown;width: 200px;}
+        .bg_4{background-color: springgreen;color: purple; width: 200px;}
+    </style>
+</head>
+<body>
+    <!-- 태그를 반복할때 사용하는 each문 -->
+    <b></b><b></b><b></b><b></b><b></b><b></b>
+
+    <script>
+        //b태그 개수만큼 자동반복
+        //index = 0 부터
+        //element는 인덱스의 해당하는 b태그:생략가능
+        $("b").each(function(index,element){
+            $(this).text(index);
+            //$(element).text(i); //같은거
+        });
+    </script>
+    <hr>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>kiwi</li>
+        <li>orange</li>
+        <li>strawberry</li>
+    </ul>
+
+    <script>
+      //  $("ul li").each(function(idx){
+        //    $(this).addClass("bg_"+idx);
+        //}); //each는 선택한 요소가 여러개일때 각각에 대해 반복 함수 실행
+
+        $("ul li").each(function(idx,ele){
+            $(ele).addClass("bg_"+idx);
+        })
+        //li에 마우스를 올리먄 ****을 출력해보자
+        //append after 추가시 비교
+        $("ul li").mouseover(function(){
+            $(this).append("<b>***</b>");
+           // $(this).after("<b>***</b>");
+        });
+        //마우스 벗어나면 b태그 제거
+        $("ul li").mouseout(function(){
+            //find하위태그중에서 b 태그를 찾아서 제거
+            $(this).find("b").remove();
+            
+            //현재이벤트가 발생하는 li태그의 다음태그를 제거
+            //$(this).next().remove();
+        })
+    </script>
+</body>
+</html>
