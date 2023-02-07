@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Q.사진을 클릭시 src ,width를 얻어서 hr태그 다음에 같은 이름의 사진 넣기
+        사진의 title 얻어서 div안에 넣고 글자 크기를 25px로 변경하기
+    </h2>
+    <img src="../연예인사진/15.jpg" width="200" title="나는 설현">
+    <hr>
+    <div></div>
+    <script>
+        $("img").click(function(){
+            //ㄱ 값을 얻어주기
+            var getSrc=$(this).attr("src");
+            var getWidth=$(this).attr("width");
+            var getTitle=$(this).attr("title");
+
+            //사진을 넣기
+            var copyImg="<img src='"+getSrc+"' width="+getWidth+">";
+            $("hr").after(copyImg);
+
+            $("div").html(getTitle).css("font-size","25px");
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="a"></h3>
+    <hr>
+    <h3 class="b">h3의 내용을 이곳에 복사하세요</h3>
+
+    <script>
+        $("h3.a").html("만화캐릭터 입니다.").append("<img src='../만화이미지/01.png'>");
+
+        //문제
+        //h3.a 에서 클릭을하면 "안의 코드를 복사하였습니다" 라고 나오게 한 후
+        //h3.b에서 클릭을 하면 그 내용이 그대로 출력(복사)되도록 해보세요
+
+        $("h3.a").click(function(){
+            tag=$(this).html();
+            alert("안의 코드를 복사하였습니다.")
+        })
+        
+        $("h3.b").click(function(){
+            //$(this).html(tag);
+            //$(this).append(tag);  //append 는 계속추가
+            $(this).after(tag); // 다음 줄에 추가
+        })
+
+    </script>
+
+</body>
+</html>
