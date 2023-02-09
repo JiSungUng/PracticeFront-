@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        #logo{width: 250px; height: 150px; margin: 0 auto; cursor: pointer;}
+        ul li{list-style: none;}
+        #coco{
+            width: 1000px;
+            height: 200px; margin: 0 auto ;
+        }
+    </style>
+</head>
+<body>
+    <div id ="logo">
+        <img src="../jquery_img (1)/coco_logo.png" >
+    </div>
+
+    <ul id = "coco">
+        <li>
+            <img src="../jquery_img (1)/01.png">
+            <img src="../jquery_img (1)/02.png">
+            <img src="../jquery_img (1)/03.png">
+            <img src="../jquery_img (1)/04.png">
+            <img src="../jquery_img (1)/05.png">
+            <img src="../jquery_img (1)/06.png">
+        </li>
+    </ul>
+
+    <script>
+        //인형을 누르면 이미지가 사라지고 다사라진후 제목을 누르면 다시 이녛이 세팅된다.
+        //세팅될때 인형의 보더를 점선으로 주세요
+
+        $("li img").click(function(){
+            $(this).fadeOut();
+        })
+        $("#logo").click(function(){
+            $("li img").fadeIn().css("border","2px dotted pink");
+        })
+    </script>
+</body>
+</html>

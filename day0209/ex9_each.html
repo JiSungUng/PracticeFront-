@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        img{
+            border: 5px inset orange;
+            border-radius: 50px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .im{margin-left: 50px;}
+        .large{
+            width: 400px;
+            height: 500px;
+            position: absolute;
+            left: 400px;
+            top: 250px;
+            border: 10px inset gray;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="show"></div>
+    <img src="" class="large" id="large">
+
+    <script>
+        var imginfo=[{name:"../만화이미지/11.png",width:"100px"},
+        {name:"../만화이미지/12.png",width:"120px"},
+        {name:"../만화이미지/13.png",width:"200px"},
+        {name:"../만화이미지/15.png",width:"150px"},
+        {name:"../만화이미지/14.png",width:"200px"}];
+
+        var s="";
+        //출력할때 class명 im
+        $.each(imginfo,function(i,elt){
+            s+="<img class='im' src='"+elt.name+"'width='"+elt.width+"'>"
+        })
+        $("#show").html(s);
+    </script>
+</body>
+</html>

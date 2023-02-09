@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        div.dragon{
+            position: absolute;
+            left: 300px;
+            top: 100px;
+            width: 250px;
+            height: 300px;
+            border: 2px solid gray;
+            border-radius: 30px;
+        }
+
+        ul li{list-style: none;}
+        ul.menu>li{
+            font-size: 2em;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        ul.submenu>li{
+            font-size: 24px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("ul.submenu").hide();
+
+            //메인메뉴명 누르면 해당메뉴의 서브메뉴가 나타난다...다른 서브메뉴들은 모두 숨긴다.
+            $("ul.menu>li").click(function(){
+                $(this).children().show('slow');
+                $(this).siblings().children().hide('slow');  //find("ul.submenu")->children 대신
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="dragon">
+        <ul class="menu">
+            <li>File
+                <ul class="submenu">
+                    <li>New</li>
+                    <li>open</li>
+                    <li>Save</li>
+                    <li>Save</li>
+                </ul>
+            </li>
+            <li>Edit
+                <ul class="submenu">
+                    <li>Cut</li>
+                    <li>Copy</li>
+                    <li>Paste</li>
+                    <li>Delete</li>
+                </ul>
+            </li>
+            <li>Help
+                <ul class="submenu">
+                    <li>Serch</li>
+                    <li>Install</li>
+                    <li>Market</li>
+                    <li>Download</li>
+                </ul>
+            </li>
+
+            
+
+        </ul>
+    </div>
+</body>
+</html>
