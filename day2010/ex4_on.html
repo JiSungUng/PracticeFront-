@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+
+            //정적이벤트
+            /*$("#mylang").children().click(function(){
+                $(this).remove();
+            });*/
+
+            $("#mylang").append('<li>JQuery</li>')
+            
+
+           /* $("#mylang").on('click','li',function(){
+                $(this).remove();
+            })*/
+            //동적이벤트
+            $(docment).on('click','li',function(e){
+                $(e.target).remove();
+            })
+            $("mylang").append('<li>JavaScript</li>');//추가된 후 삭제됨
+
+        }); 
+    </script>
+</head>
+<body>
+    <ul id="mylang">
+        <li>Java</li>
+        <li>Oracle</li>
+        <li>Jsp</li>
+        <li>Spring</li>
+    </ul>
+</body>
+</html>

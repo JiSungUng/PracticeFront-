@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        #one{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid maroon;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animate
+$(선택자).animate(스타일 [,지속시간][,시간당속도함수][,콜백함수]);
+animate()메소드는 시간당 속도함수 를 사용해서 이펙트 효과의 시간당속도를 설정
+swing : 시작/끝 느리게움직이는데 중간에서는 빨라진다
+linear : 일정한 속도로움직인다
+ -->
+
+    <img src="../jquery_img (1)/05.png" id="img1" width="100">
+    <hr>
+    <div id="one"></div>
+
+    <script>
+        $("#img1").animate({width:'200px',opacity:'0.5'},'slow');
+        $("#img1").animate({width:'100px',opacity:'1'},'slow','linear',function(){
+            //애니메이션이 끝난 후 처리
+            alert("끝났씁니다.")
+            $(this).after("<b>The End!!</b>");
+        })
+        $("#one").animate({"left":"+=60"},2000).animate({"borderWidth":"10px"},2000)
+        .animate({"width":"150px"},2000).animate({"height":"150px"},2000);
+    </script>
+</body>
+
+</html>

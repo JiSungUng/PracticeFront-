@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <!-- on()메소드
+처음부터 존재하는 요소나 미래에 생기게 될요소에 모두이벤트 적용
+
+jquery에서 이벤트 걸때 $(id).click(function(){})
+element가 나중에 생긴경우에는 위의 click()이벤트 적용이 안된다
+
+그럴때 필요한 코드가 on()
+$(document).on(‘click’,id,function)
+요런 코드는 element가 나중에 동적으로 생성되더라도 이벤트가 걸리게 된다
+
+on(이벤트종류,지정자,구현부)
+ -->
+
+ <button type="button" id="add">+</button>
+ <script>
+    //이전방식_나중에 생기게 된 엘리먼트는 동작하지않는다
+    /*$("#add").click(function(){
+        $('body').append("<button id='add'>+</button>")
+    })*/
+    //on 메소드
+  /*  $(document).on("click","button[id='add']",function(){
+        $('body').append("<button id='add'>+</button>")
+
+    });*/
+    $(document).on("click","button",function(){
+        $('body').append("<button>+</button>")
+
+    });
+ </script>
+</body>
+</html>
