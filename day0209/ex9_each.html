@@ -25,6 +25,21 @@
 
         }
     </style>
+    <script>
+        $(function(){
+            $("img.large").attr("src",$("img:eq(0)").attr("src"));
+            //작은이미지에 마우스 올리면 45도 로테이트, 벗어나면 다시 제자리
+            $("img.im").hover(function(){
+                $(this).css("transform","rotate(45deg)");
+            },function(){
+                $(this).css("transform","rotate(0deg)");
+            })
+            //작은 이미지 클릭하면 해당 이미지가 large에 나온다.
+            $("img.im").click(function(){
+                $("img.large").attr("src",$(this).attr("src"));
+            })
+        })
+    </script>
 </head>
 <body>
     <div id="show"></div>
