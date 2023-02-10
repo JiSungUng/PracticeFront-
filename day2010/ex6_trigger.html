@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Edu+VIC+WA+NT+Beginner:wght@600&family=Gamja+Flower&family=Single+Day&family=Jua&family=Nanum+Pen+Script&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="color: blueviolet">start</h2>
+    <h2 style="color: aqua">start</h2>
+    <h2 style="color: palevioletred">start</h2>
+
+    <script>
+        $("h2").click(function(){
+
+            //별추가#1
+            $(this).append("★");
+            ////별추가#2
+            $(this).gtml(function(idx,html){
+                return html+"★";
+            })
+        });
+
+        //1초단위로 마지막 h2를 클릭한 효과주기
+        setInterval(function(){
+            $("h2:last").trigger("click");//이벤트 강제발생
+        },1000);
+
+    </script>
+    <hr>
+    <input type="file" id="file" style="visibility: hidden;">
+    <img src="../jquery_img (1)/camera.png" width="70" id="camera">
+
+    <script>
+        $("#camara").click(function(){
+            $("file").trigger("click")
+        })
+    </script>
+</body>
+</html>
